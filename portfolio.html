@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Masiga Cyrilla's Community Service Learning portfolio at Ratta Senior School, Maseno University. Environmental conservation, library organization, and sanitation work.">
+  <meta name="author" content="Masiga Cyrilla">
+  <title>Masiga Cyrilla · Community Service Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper: #F1E7D2;
+      --paper-card: #F8F2E3;
+      --paper-deep: #E3D4AF;
+      --ink: #26221A;
+      --ink-soft: #5D5340;
+      --rule: rgba(107, 137, 156, 0.45);
+      --rule-strong: rgba(107, 137, 156, 0.75);
+      --margin: #AE4F39;
+      --clay: #9C4221;
+      --pine: #33502E;
+      --ochre: #B4852A;
+      --chalk-bg: #1F2E26;
+      --chalk-line: #EFE8D3;
+      --max-w: 1180px;
+      --gutter: clamp(20px, 4vw, 48px);
+    }
+
+    *{ box-sizing: border-box; margin: 0; padding: 0; }
+    html{ scroll-behavior: smooth; }
+    body{
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Public Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4{
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    a{ color: var(--clay); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    /* ruled-paper texture, used as the page's recurring structural motif */
+    .ruled{
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 30px,
+        var(--rule) 31px
+      );
+    }
+    .margin-line{
+      position: relative;
+    }
+    .margin-line::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--margin);
+      opacity: 0.55;
+    }
+
+    /* ---------- topbar ---------- */
+    .topbar{
+      background: var(--chalk-bg);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      border-bottom: 3px double rgba(239, 232, 211, 0.25);
+    }
+    .topbar-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px var(--gutter);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .topbar-id{ display: flex; align-items: center; gap: 12px; }
+    .topbar-avatar{
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(239, 232, 211, 0.5);
+    }
+    .topbar-name{
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      color: var(--chalk-line);
+      font-weight: 500;
+    }
+    .topbar-sub{
+      font-size: 0.78rem;
+      color: rgba(239, 232, 211, 0.6);
+      padding: 3px 12px;
+      border: 1px solid rgba(239, 232, 211, 0.3);
+      border-radius: 2px;
+    }
+
+    /* ---------- hero: record card ---------- */
+    .hero{
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 74px;
+    }
+    .hero-inner{
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+      padding: 50px var(--gutter);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(30px, 5vw, 64px);
+      align-items: stretch;
+    }
+    .record-card{
+      background: var(--paper-card);
+      border: 1px solid var(--paper-deep);
+      border-radius: 6px;
+      box-shadow: 0 18px 40px rgba(38, 34, 26, 0.1);
+      padding: 44px clamp(28px, 4vw, 52px);
+      position: relative;
+    }
+    .punch{
+      position: absolute;
+      top: 26px; left: -13px;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 1px solid var(--paper-deep);
+      box-shadow: inset 0 2px 3px rgba(38,34,26,0.15);
+    }
+    .punch.two{ top: auto; bottom: 26px; }
+    .issuer-badge{
+      display: inline-block;
+      font-size: 0.82rem;
+      color: var(--pine);
+      border: 1px solid var(--pine);
+      border-radius: 3px;
+      padding: 5px 12px;
+      margin-bottom: 28px;
+    }
+    .hero-name{
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.05;
+      border-bottom: 1px solid var(--rule-strong);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+    .hero-title{
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      max-width: 32ch;
+      margin-bottom: 32px;
+    }
+    .field-rows{ display: flex; flex-direction: column; }
+    .field-row{
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.92rem;
+    }
+    .field-row:last-child{ border-bottom: none; }
+    .field-row dt{ color: var(--ink-soft); }
+    .field-row dd{ color: var(--ink); font-weight: 500; }
+
+    .hero-media{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pinned-photo{
+      position: relative;
+      background: var(--paper-card);
+      padding: 14px 14px 46px;
+      border: 1px solid var(--paper-deep);
+      border-radius: 3px;
+      box-shadow: 0 20px 44px rgba(38,34,26,0.16);
+      transform: rotate(-2deg);
+      max-width: 420px;
+      width: 100%;
+    }
+    .pinned-photo img{
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+    }
+    .pinned-photo::before{
+      content: '';
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--clay);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .pinned-photo figcaption{
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+
+    /* ---------- section scaffolding ---------- */
+    section{ padding: 96px 0; }
+    .section-title{
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      margin-bottom: 48px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--rule-strong);
+      max-width: 620px;
+    }
+
+    /* ---------- about ---------- */
+    .about-grid{
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 40px;
+      padding-left: 20px;
+    }
+    .about-label{
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      padding-top: 6px;
+    }
+    .about-content{ padding: 4px 0 4px 24px; }
+    .about-content p{
+      font-size: 1.06rem;
+      max-width: 64ch;
+      margin-bottom: 22px;
+      color: var(--ink-soft);
+      padding-bottom: 14px;
+    }
+    .about-content p:first-child{ font-size: 1.18rem; color: var(--ink); }
+    .about-content p:last-child{
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--pine);
+    }
+
+    /* ---------- contributions ---------- */
+    .contributions-section{
+      background: var(--paper-card);
+      border-top: 1px solid var(--paper-deep);
+      border-bottom: 1px solid var(--paper-deep);
+    }
+    .entry{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 52px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .entry:last-child{ border-bottom: none; padding-bottom: 0; }
+    .entry.reverse .entry-media{ order: 2; }
+    .entry.reverse .entry-text{ order: 1; }
+
+    .entry-media img{
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid var(--paper-deep);
+    }
+    .entry-media figcaption{
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      margin-top: 12px;
+      font-style: italic;
+    }
+    .stamp{
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--clay);
+      border: 1.5px dashed var(--clay);
+      border-radius: 40% 42% 40% 42% / 46% 40% 46% 40%;
+      padding: 6px 16px;
+      margin-bottom: 18px;
+      transform: rotate(-3deg);
+    }
+    .entry:nth-child(2) .stamp{ color: var(--pine); border-color: var(--pine); transform: rotate(2deg); }
+    .entry:nth-child(3) .stamp{ color: var(--ochre); border-color: var(--ochre); transform: rotate(-1.5deg); }
+    .entry-text h3{ font-size: 1.7rem; margin-bottom: 18px; }
+    .entry-text ul{ list-style: none; }
+    .entry-text li{
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 13px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .entry-text li::before{
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--pine);
+    }
+    .entry-text strong{ color: var(--ink); }
+
+    /* ---------- gallery ---------- */
+    .gallery-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .gallery-item{
+      background: var(--paper-card);
+      padding: 10px 10px 30px;
+      border: 1px solid var(--paper-deep);
+      border-radius: 3px;
+      box-shadow: 0 10px 24px rgba(38,34,26,0.1);
+    }
+    .gallery-item:nth-child(1){ transform: rotate(-1.5deg); }
+    .gallery-item:nth-child(2){ transform: rotate(1deg); }
+    .gallery-item:nth-child(3){ transform: rotate(-0.5deg); }
+    .gallery-item img{
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+    }
+
+    /* ---------- challenges ---------- */
+    .challenges-section{ background: var(--paper-card); border-top: 1px solid var(--paper-deep); border-bottom: 1px solid var(--paper-deep); }
+    .challenges-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .ticket{
+      background: var(--paper);
+      padding: 26px 28px;
+      border-radius: 3px;
+      border-left: 3px solid var(--clay);
+    }
+    .ticket:nth-child(2){ border-left-color: var(--pine); }
+    .ticket:nth-child(3){ border-left-color: var(--ochre); }
+    .ticket:nth-child(4){ border-left-color: var(--margin); }
+    .ticket h4{ font-size: 1.1rem; margin-bottom: 8px; font-weight: 500; }
+    .ticket p{ color: var(--ink-soft); font-size: 0.94rem; }
+    .ticket .resolution{ color: var(--ink); font-weight: 500; margin-top: 10px; }
+
+    /* ---------- skills (field-kit checklist) ---------- */
+    .skills-list{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 40px;
+      max-width: 760px;
+    }
+    .skill-item{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 4px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.98rem;
+    }
+    .skill-item .check{
+      width: 16px; height: 16px;
+      border: 1.5px solid var(--pine);
+      border-radius: 2px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .skill-item .check::after{
+      content: '✓';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--pine);
+    }
+
+    /* ---------- mentorship ---------- */
+    .mentorship-section{ background: var(--paper-card); border-top: 1px solid var(--paper-deep); }
+    .mentorship-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+    .mentorship-grid p{ font-size: 1.06rem; color: var(--ink-soft); }
+    .mentorship-grid strong{ color: var(--ink); }
+    .approval-note{
+      margin-top: 24px;
+      padding: 22px 24px;
+      background: var(--paper);
+      border: 1px solid var(--paper-deep);
+      border-radius: 3px;
+      position: relative;
+    }
+    .approval-note::before{
+      content: 'Noted';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      background: var(--paper-card);
+      padding: 0 10px;
+      font-size: 0.75rem;
+      color: var(--clay);
+      border: 1px dashed var(--clay);
+      border-radius: 40%;
+      transform: rotate(-2deg);
+    }
+    .approval-note p{ font-family: 'Fraunces', serif; font-style: italic; color: var(--ink); font-size: 1rem; }
+    .approval-note .attrib{ margin-top: 10px; font-family: 'Public Sans', sans-serif; font-style: normal; font-weight: 500; color: var(--ink-soft); font-size: 0.9rem; }
+    .gained-box{
+      background: var(--paper);
+      padding: 34px;
+      border-radius: 3px;
+      border: 1px solid var(--paper-deep);
+    }
+    .gained-box h4{ font-size: 1.15rem; margin-bottom: 14px; font-weight: 500; }
+    .gained-box ul{ list-style: none; }
+    .gained-box li{
+      padding: 9px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+    }
+    .gained-box li:last-child{ border-bottom: none; }
+    .gained-box li::before{ content: '—'; color: var(--pine); }
+
+    /* ---------- impact: chalkboard ---------- */
+    .impact{
+      background: var(--chalk-bg);
+      color: var(--chalk-line);
+      padding: 110px 0;
+    }
+    .impact .section-title{ color: var(--chalk-line); border-bottom-color: rgba(239,232,211,0.3); }
+    .impact-stats{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+      margin-top: 10px;
+    }
+    .impact-stat{ text-align: center; }
+    .impact-stat .num{
+      font-family: 'Fraunces', serif;
+      font-size: 2.9rem;
+      font-weight: 600;
+      color: var(--chalk-line);
+      display: inline-block;
+      padding-bottom: 6px;
+      border-bottom: 3px dashed rgba(239,232,211,0.5);
+    }
+    .impact-stat .label{ color: rgba(239,232,211,0.65); font-size: 0.88rem; margin-top: 10px; }
+    .impact blockquote{
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+      line-height: 1.5;
+      color: var(--chalk-line);
+      max-width: 38ch;
+      margin-top: 60px;
+    }
+    .impact cite{
+      display: block;
+      margin-top: 24px;
+      font-style: normal;
+      font-family: 'Public Sans', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(239,232,211,0.55);
+    }
+
+    /* ---------- footer ---------- */
+    footer{ padding: 90px 0 40px; }
+    .due-card{
+      max-width: 520px;
+      border: 1px solid var(--paper-deep);
+      border-radius: 4px;
+      background: var(--paper-card);
+      overflow: hidden;
+    }
+    .due-card-head{
+      padding: 20px 26px;
+      border-bottom: 1px solid var(--paper-deep);
+    }
+    .due-card-head h3{ font-size: 1.4rem; }
+    .due-row{
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+      padding: 13px 26px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.94rem;
+    }
+    .due-row:last-child{ border-bottom: none; }
+    .due-row dt{ color: var(--ink-soft); }
+    .due-row dd{ color: var(--ink); font-weight: 500; }
+    .footer-note{
+      margin-top: 36px;
+      max-width: 520px;
+      padding: 20px 24px;
+      border: 1px dashed var(--clay);
+      border-radius: 3px;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .footer-note strong{ color: var(--ink); }
+    .footer-bottom{
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 900px){
+      .hero-inner{ grid-template-columns: 1fr; gap: 32px; }
+      .hero-media{ order: -1; max-width: 380px; margin: 0 auto; }
+      .hero{ padding-top: 56px; }
+      .about-grid, .mentorship-grid{ grid-template-columns: 1fr; gap: 18px; }
+      .about-content{ padding-left: 0; }
+      .entry{ grid-template-columns: 1fr; gap: 26px; }
+      .entry.reverse .entry-media{ order: 1; }
+      .entry.reverse .entry-text{ order: 2; }
+      .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+      section{ padding: 64px 0; }
+      .impact{ padding: 76px 0; }
+      .challenges-grid{ grid-template-columns: 1fr; }
+      .impact-stats{ grid-template-columns: 1fr 1fr; }
+      .skills-list{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 500px){
+      .gallery-grid{ grid-template-columns: 1fr; }
+      .hero-name{ font-size: 2rem; }
+      .entry-media img{ height: 240px; }
+      .impact-stats{ grid-template-columns: 1fr; }
+      .due-row, .field-row{ grid-template-columns: 90px 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+    }
+
+    :focus-visible{ outline: 2px solid var(--clay); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-id">
+        <img class="topbar-avatar" src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788781964/sirila_portrait_t7s5v1.png" alt="Masiga Cyrilla">
+        <span class="topbar-name">Masiga Cyrilla</span>
+      </span>
+      <span class="topbar-sub">Service record</span>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="record-card">
+        <span class="punch"></span>
+        <span class="punch two"></span>
+        <span class="issuer-badge">Maseno University, Community Service Learning Unit</span>
+        <h1 class="hero-name">Masiga Cyrilla</h1>
+        <p class="hero-title">Community Service Learning volunteer at Ratta Senior School</p>
+        <dl class="field-rows">
+          <div class="field-row"><dt>Location</dt><dd>Maseno, Kenya</dd></div>
+          <div class="field-row"><dt>Placement</dt><dd>Ratta Senior School</dd></div>
+          <div class="field-row"><dt>Term</dt><dd>2026 academic year</dd></div>
+          <div class="field-row"><dt>Email</dt><dd><a href="mailto:Masigacyrilla@gmail.com">Masigacyrilla@gmail.com</a></dd></div>
+          <div class="field-row"><dt>Phone</dt><dd>0768807365</dd></div>
+        </dl>
+      </div>
+      <div class="hero-media">
+        <figure class="pinned-photo">
+          <img src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788781965/sirila_hero_ovbqzf.png" alt="Ratta Senior School environment">
+          <figcaption>The compound at Ratta Senior School</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== ABOUT ========== -->
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">About the placement</h2>
+        <div class="about-grid margin-line">
+          <span class="about-label">Context</span>
+          <div class="about-content">
+            <p>As part of the Maseno University Community Service Learning program, I spent eight weeks at Ratta Senior School contributing to work that sits at the intersection of environment, education, and everyday upkeep.</p>
+            <p>The program pairs university students with local schools to address practical needs on the ground — unstable topsoil, a library that needed a system, and drainage channels doing more harm than good when left blocked. What follows is a record of that work: what was done, what it took, and what it left behind.</p>
+            <p>8 weeks, February to April 2026 — 120+ hours of service logged.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTRIBUTIONS ========== -->
+    <section class="contributions-section">
+      <div class="wrap">
+        <h2 class="section-title">Three areas of work</h2>
+
+        <div class="entry">
+          <figure class="entry-media">
+            <img src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788786290/sirila_planting_a_tree_gxkzlo.png" alt="Tree planting on the school compound">
+            <figcaption>Planting trees to stabilize topsoil and prevent erosion</figcaption>
+          </figure>
+          <div class="entry-text">
+            <span class="stamp">Environmental conservation</span>
+            <h3>Ground work, literally</h3>
+            <ul>
+              <li>Planted <strong>30+ tree species</strong> across the school compound to stabilize topsoil and reduce erosion.</li>
+              <li>Focused on high-vulnerability zones around the school grounds most exposed to runoff.</li>
+              <li>Educated students on the importance of tree cover for soil health and climate resilience.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry reverse">
+          <figure class="entry-media">
+            <img src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788785705/sirila_cleaning_library_zswkm7.png" alt="Organizing shelves in the school library">
+            <figcaption>Sorting and shelving library resources for easy access</figcaption>
+          </figure>
+          <div class="entry-text">
+            <span class="stamp">Academic enhancement</span>
+            <h3>Making the library usable</h3>
+            <ul>
+              <li>Organized and categorized <strong>5 library sections</strong> so students could actually find what they needed.</li>
+              <li>Ran <strong>weekly reading and mentorship sessions</strong> reaching 80+ students.</li>
+              <li>Built a culture of independent study and consistent library use.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <figure class="entry-media">
+            <img src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788785823/sirila_watering_a_plant_fen6fy.png" alt="Watering newly planted trees near the cleared drainage line">
+            <figcaption>Tending new plantings along the cleared drainage line</figcaption>
+          </figure>
+          <div class="entry-text">
+            <span class="stamp">Sanitation &amp; drainage</span>
+            <h3>Keeping water moving</h3>
+            <ul>
+              <li>Cleared and redirected <strong>3 blocked drainage pathways</strong> around the school compound.</li>
+              <li>Prevented water stagnation that could breed disease vectors like mosquitoes.</li>
+              <li>Maintained a cleaner, safer, and more hygienic learning environment for students and staff.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Field moments</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788786290/sirila_planting_a_tree_gxkzlo.png" alt="Tree planting activity at Ratta Senior School">
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788785704/sirila_with_students_k81hkk.png" alt="Students at Ratta Senior School during mentorship session">
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1788785823/sirila_watering_a_plant_fen6fy.png" alt="Watering newly planted trees">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CHALLENGES ========== -->
+    <section class="challenges-section">
+      <div class="wrap">
+        <h2 class="section-title">Challenges &amp; solutions</h2>
+        <div class="challenges-grid">
+          <div class="ticket">
+            <h4>Tool shortage</h4>
+            <p>Initial lack of gardening tools for planting and drainage work.</p>
+            <p class="resolution">Improvised with local resources and coordinated tool-sharing among volunteers.</p>
+          </div>
+          <div class="ticket">
+            <h4>Low library turnout</h4>
+            <p>Students unaware of library resources or reluctant to use them.</p>
+            <p class="resolution">Partnered with class teachers to schedule guided library sessions and reading groups.</p>
+          </div>
+          <div class="ticket">
+            <h4>Unpredictable weather</h4>
+            <p>Heavy rains disrupted outdoor planting and drainage work.</p>
+            <p class="resolution">Adjusted the timetable flexibly, focusing on indoor library work during downpours.</p>
+          </div>
+          <div class="ticket">
+            <h4>Limited supervision</h4>
+            <p>Single intern teacher (Sirila) covering Home Science and Biology.</p>
+            <p class="resolution">Worked independently, reported progress weekly, and collaborated closely with Sirila.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Skills developed</h2>
+        <div class="skills-list">
+          <div class="skill-item"><span class="check"></span>Community leadership</div>
+          <div class="skill-item"><span class="check"></span>Teamwork</div>
+          <div class="skill-item"><span class="check"></span>Problem-solving</div>
+          <div class="skill-item"><span class="check"></span>Adaptability</div>
+          <div class="skill-item"><span class="check"></span>Communication</div>
+          <div class="skill-item"><span class="check"></span>Interpersonal skills</div>
+          <div class="skill-item"><span class="check"></span>Student mentorship</div>
+          <div class="skill-item"><span class="check"></span>Environmental stewardship</div>
+          <div class="skill-item"><span class="check"></span>Community engagement</div>
+          <div class="skill-item"><span class="check"></span>Project coordination</div>
+          <div class="skill-item"><span class="check"></span>Resource management</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MENTORSHIP ========== -->
+    <section class="mentorship-section">
+      <div class="wrap">
+        <h2 class="section-title">Mentorship &amp; collaboration</h2>
+        <div class="mentorship-grid">
+          <div>
+            <p>I worked closely with <strong>Sirila</strong>, the intern teacher at Ratta Senior School teaching <strong>Home Science</strong> and <strong>Biology</strong>. Her guidance helped shape the reading sessions and mentorship approach, bridging the gap between classroom learning and community service.</p>
+            <div class="approval-note">
+              <p>Cyrilla brought energy and structure to our library program. The students responded well to the mentorship sessions, and the tree-planting initiative has visibly improved the school compound.</p>
+              <p class="attrib">— Sirila, Intern Teacher, Ratta Senior School</p>
+            </div>
+          </div>
+          <div class="gained-box">
+            <h4>Skills gained through mentorship</h4>
+            <ul>
+              <li>Collaborative lesson planning</li>
+              <li>Student behavior management</li>
+              <li>Subject integration (Biology + Environmental Science)</li>
+              <li>Feedback and reflection practices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== IMPACT ========== -->
+    <section class="impact">
+      <div class="wrap">
+        <h2 class="section-title">Measurable impact</h2>
+        <div class="impact-stats">
+          <div class="impact-stat"><span class="num">30+</span><div class="label">Trees planted</div></div>
+          <div class="impact-stat"><span class="num">5</span><div class="label">Library sections organized</div></div>
+          <div class="impact-stat"><span class="num">80+</span><div class="label">Students reached</div></div>
+          <div class="impact-stat"><span class="num">3</span><div class="label">Drainage channels cleared</div></div>
+        </div>
+        <blockquote>
+          A cleaner school environment, easier access to learning resources, and students more engaged with reading and independent study.
+          <cite>Outcome of the Community Service Learning placement at Ratta Senior School</cite>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="wrap">
+      <div class="due-card">
+        <div class="due-card-head"><h3>Let's connect</h3></div>
+        <div class="due-row"><dt>Name</dt><dd>Masiga Cyrilla</dd></div>
+        <div class="due-row"><dt>School</dt><dd>Maseno University</dd></div>
+        <div class="due-row"><dt>Email</dt><dd><a href="mailto:Masigacyrilla@gmail.com">Masigacyrilla@gmail.com</a></dd></div>
+        <div class="due-row"><dt>Phone</dt><dd>0768807365</dd></div>
+      </div>
+      <div class="footer-note">
+        <strong>Looking for a volunteer, intern, or community-driven professional?</strong> I'm open to opportunities in environmental conservation, education, and community development. Reach out — let's talk.
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Masiga Cyrilla · Community Service Learning</span>
+        <span>Maseno University · Ratta Senior School</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
